@@ -52,6 +52,7 @@ Medication = {
 // POST /users/signin
 request_body = { "email": string, "password": string }
 response_body = { "success": boolean, "data": User }
+
 // POST /users/signup
 request_body = { "fullname": string, "email": string, "password": string }
 response_body = { "success": boolean, "data": string } // JWT token
@@ -68,7 +69,6 @@ response_body = { "success": boolean, "data": Medication[] } // only name
 request_body = { "name": string, "generic_name": string, "medication_class": string, "availability": string }
 request_multipart = "medication_image"
 response_body = { "success": boolean, "data": boolean }
-
 
 // GET /medications/:medication_id
 response_body = { "success": boolean, "data": Medication } // without reviews
