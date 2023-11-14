@@ -11,7 +11,7 @@ The application helps users to review and report medication side effects.
 ### Application specifications and requirements
 Your project must use the following:  
 * Implement a login-based system with JWT.  
-* All Angular routes should be protected from public access by JWT (except sign-up and sign-in routes)
+* Browsing and reading reviews is open to guests, but adding, updating, and deleting functionality is restricted to users.
 * State properties in all components and services should be declared as signals.
 * Use at least one featured lazy-loaded module.
 * Projects must have proper UI that complies with the web standards.
