@@ -52,7 +52,7 @@ Medication = {
 // POST /users/signin
 request_body = { "email": string, "password": string }
 response_body = { "success": boolean, "data": User }
-
+  
 // POST /users/signup
 request_body = { "fullname": string, "email": string, "password": string }
 response_body = { "success": boolean, "data": string } // JWT token
