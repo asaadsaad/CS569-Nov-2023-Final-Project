@@ -92,4 +92,7 @@ response_body = { "success": boolean, "data": Review }
 
 // DELETE /medications/:medication_id/reviews/:review_id
 response_body = { "success": boolean, "data": boolean }
+
+// GET /medications/images/:image_id
+response_body = Binary of image file
 ```
