@@ -51,11 +51,11 @@ Medication = {
 }
 // POST /users/signin
 request_body = { "email": string, "password": string }
-response_body = { "success": boolean, "data": User }
+response_body = { "success": boolean, "data": string } // JWT token
   
 // POST /users/signup
 request_body = { "fullname": string, "email": string, "password": string }
-response_body = { "success": boolean, "data": string } // JWT token
+response_body = { "success": boolean, "data": User } // JWT token
 
 // POST /medications
 request_body = { "name": string, "generic_name": string, "medication_class": string, "availability": string }
