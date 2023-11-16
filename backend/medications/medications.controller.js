@@ -161,8 +161,12 @@ export const update_review_by_id = async (req, res, next) => {
     try {
         const { medication_id, review_id } = req.params;
         const { review, rating, tokenData: { _id: user_id } } = req.body;
+
+        const review_details = await Medication.findOne({ _id: medication_id, "reviews._id": review_id }, { "reviews.$": 1, _id: 0 }).lean();
+        if (review_details.reviews[0].by.user_id.toString() !== user_id) throw Error('User is not authorized to change this review');
+
         const results = await Medication.updateOne(
-            { _id: medication_id, "reviews._id": review_id, "reviews.by.user_id": user_id },
+            { _id: medication_id, "reviews._id": review_id },
             {
                 $set: {
                     "reviews.$.review": review,
